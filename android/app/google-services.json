@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "680086652608",
+    "firebase_url": "https://news-app-ae0cd.firebaseio.com",
+    "project_id": "news-app-ae0cd",
+    "storage_bucket": "news-app-ae0cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680086652608:android:7a5e7d8fa6e2368c058f25",
+        "android_client_info": {
+          "package_name": "com.ekiti.newsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "680086652608-nrk197snrlfic3928k2csfue1of1707u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgew-iMlNHudvHBMvBlkXoAjoA8xXvpOI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "680086652608-nrk197snrlfic3928k2csfue1of1707u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
