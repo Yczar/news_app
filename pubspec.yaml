@@ -39,6 +39,9 @@ dependencies:
   line_awesome_flutter:
   flutter_screenutil:
   simple_animations:
+  geolocator:
+  multi_image_picker:
+  mock_data:
 
 dev_dependencies:
   flutter_test:

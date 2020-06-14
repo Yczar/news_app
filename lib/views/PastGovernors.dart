@@ -20,15 +20,12 @@ class _PastGovernorsState extends State<PastGovernors> {
       appBar: AppBar(
         elevation: 0,
         bottomOpacity: 0,
-        leading: IconButton(icon: Icon(Icons.arrow_back_ios, color: Colors.black, size: 20,),),
+        leading: IconButton(icon: Icon(Icons.arrow_back_ios, color: Colors.deepOrangeAccent[400], size: 20,), onPressed: (){
+          Navigator.pop(context);
+        },),
         title: Text("Past Governors", style: kTitleCard,),
         centerTitle: true,
-        actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(right: 15.0),
-            child: Icon(Icons.filter_list, size: 20, color: Colors.black,),
-          )
-        ],
+
       ),
       body: ListView.builder(
       itemCount: governorsList.length,
@@ -39,12 +36,12 @@ class _PastGovernorsState extends State<PastGovernors> {
         var trending = governorsList[index];
       return InkWell(
           onTap: (){
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                builder: (context) => GovernorDetails(
-                  governors: trending,
-                )));
+//            Navigator.push(
+//                context,
+//                MaterialPageRoute(
+//                builder: (context) => GovernorDetails(
+//                  governors: trending,
+//                )));
           },
           child: PastGovRow(governors: trending,));
     }

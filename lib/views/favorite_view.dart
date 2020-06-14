@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:jiffy/jiffy.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:newsapp/constants.dart';
 import 'package:newsapp/provider/user_provider.dart';
 import 'package:newsapp/views/read_news_view.dart';
 import 'package:newsapp/widgets/secondary_card.dart';
@@ -23,8 +24,8 @@ class FavoriteView extends StatelessWidget {
 //        brightness: Brightness.dark,
         elevation: 0,
         bottomOpacity: 0,
-        title: Text("Favorites"),
-        leading: Icon(LineAwesomeIcons.heart),
+        title: Text("Favorites", style: kActiveTabStyle,),
+        leading: Icon(Icons.favorite, color: Colors.deepOrangeAccent[400],),
       ),
       body: StreamBuilder<DocumentSnapshot>(
           stream: Firestore.instance

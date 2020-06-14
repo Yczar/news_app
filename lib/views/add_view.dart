@@ -6,6 +6,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:newsapp/constants.dart';
 import 'package:newsapp/database.dart';
 import 'package:newsapp/provider/user_provider.dart';
 import 'package:provider/provider.dart';
@@ -19,7 +21,8 @@ class AddView extends StatefulWidget {
 
 class _AddViewState extends State<AddView> {
   String postid = Uuid().v4();
-  File fileImage;final StorageReference storageReference =
+  File fileImage;
+  final StorageReference storageReference =
   FirebaseStorage.instance.ref().child("Post images");
   bool loading = false;
   PostDatabase postDatabase = PostDatabase();
@@ -59,9 +62,12 @@ class _AddViewState extends State<AddView> {
             return Center(child: CircularProgressIndicator());
           } else if (snapshot.hasData) {
             return Scaffold(
+              backgroundColor: Colors.white,
               appBar: AppBar(
                 backgroundColor: Colors.white,
+                leading: Icon(LineAwesomeIcons.plus_circle, color: Colors.deepOrangeAccent[400],),
                 elevation: 0,
+                title: Text("Add News", style: kActiveTabStyle,),
                 bottomOpacity: 0,
               ),
               body: loading? Center(child: CircularProgressIndicator()) : Container(
@@ -86,7 +92,14 @@ class _AddViewState extends State<AddView> {
                               ),
                             ),
                             child: fileImage != null ? Image.file(fileImage, fit: BoxFit.cover,) : Center(
-                              child: Icon(Icons.add, color: Colors.black,),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Icon(Icons.add, color: Colors.deepOrangeAccent[400],),
+                                  Text("Tap to add an Image")
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -165,7 +178,7 @@ class _AddViewState extends State<AddView> {
                           value: _currentCategory,
                           iconEnabledColor: Colors.black,
                           hint: (Text(
-                            'Select your Business Category',
+                            'Select your News Category',
                             style: TextStyle(
                                 fontFamily: 'cantarell',
                                 fontSize: 15,),
@@ -219,15 +232,7 @@ class _AddViewState extends State<AddView> {
                           child: Ink(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(6),
-                              gradient: LinearGradient(
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                                colors: [
-                                  Color(0xffff5f6d),
-                                  Color(0xffff5f6d),
-                                  Color(0xffffc371),
-                                ],
-                              ),
+                              color: Colors.deepOrangeAccent[400]
                             ),
                             child: Container(
                               alignment: Alignment.center,

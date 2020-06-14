@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsapp/models/governor.dart';
 
 import '../constants.dart';
@@ -13,6 +14,7 @@ class PastGovRow extends StatefulWidget {
 class _PastGovRowState extends State<PastGovRow> {
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, height: 896, width: 414, allowFontScaling: true);
     return Container(
       child: Padding(
         padding: const EdgeInsets.only(top: 8.0, left: 8, right: 8),
@@ -20,8 +22,8 @@ class _PastGovRowState extends State<PastGovRow> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             CircleAvatar(
-              backgroundImage: NetworkImage(widget.governors.imageurl),
-              radius: 50,
+              backgroundImage: AssetImage(widget.governors.imageurl),
+              radius: kSpacingUnit.w * 5,
             ),
             Expanded(
               child: Padding(

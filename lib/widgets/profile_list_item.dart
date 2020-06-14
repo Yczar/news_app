@@ -41,9 +41,9 @@ class ProfileListItem extends StatelessWidget {
           SizedBox(width: kSpacingUnit.w * 1.5),
           Text(
             this.text,
-            style: kTitleTextStyle.copyWith(
-              fontWeight: FontWeight.w500,
-            ),
+            style: kCategoryTitle.copyWith(color: Colors.black)
+//              fontWeight: FontWeight.w500,
+//            ),
           ),
           Spacer(),
           if (this.hasNavigation)

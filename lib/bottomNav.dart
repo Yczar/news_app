@@ -48,12 +48,12 @@ class _BottomNavState extends State<BottomNav> {
               (e) => BottomNavigationBarItem(
                 icon: SvgPicture.asset(
                   e.icon,
-                  width: 24.0,
+                  width: 18.0,
                 ),
                 activeIcon: SvgPicture.asset(
                   e.activeIcon,
                   color: Colors.deepOrangeAccent[400],
-                  width: 24.0,
+                  width: 18.0,
                 ),
                 title: Text(e.title),
               ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/views/gallery_view.dart';
 import 'package:newsapp/authenticate/login_page.dart';
-import 'package:newsapp/authenticate/signup_page.dart';
+import 'package:newsapp/authenticate/signin.dart';
+import 'package:newsapp/authenticate/signup.dart';
 
 
 class Authenticate extends StatefulWidget {
@@ -19,9 +21,9 @@ class _AuthenticateState extends State<Authenticate> {
   @override
   Widget build(BuildContext context) {
     if (!showSignIn) {
-      return SignupPage(toggleView: toggleView);
+      return SignUp(toggleView: toggleView,);
     } else {
-      return LoginPage(toggleView: toggleView);
+      return SignIn(toggleView: toggleView);
     }
   }
 ////    return Container();

@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:newsapp/constants.dart';
 import 'package:newsapp/views/LocalGovernments.dart';
 import 'package:newsapp/views/PastGovernors.dart';
+import 'package:newsapp/views/gallery_view.dart';
 import 'package:newsapp/views/tourism_view.dart';
 
 class myDrawer extends StatelessWidget {
@@ -30,8 +31,8 @@ class myDrawer extends StatelessWidget {
                                     decoration: BoxDecoration(
                                         borderRadius:
                                             BorderRadius.circular(20)),
-                                    child: Image.network(
-                                      "https://news.ncbn.ng/wp-content/uploads/2018/07/INEC-Declares-Dr-Kayode-Fayemi-Winner-of-Ekiti-State-Governor.jpg",
+                                    child: Image.asset(
+                                      "assets/fayemi.jpg",
                                       fit: BoxFit.cover,
                                     )),
                               ),
@@ -77,11 +78,12 @@ class myDrawer extends StatelessWidget {
 //                          child: Image.asset("images/icons/isales.png", color: appOrange, height:70,),
 //                        ),
                   ),
-                  ListTile(
-//                    leading: ImageIcon(AssetImage("assets/culture.png")),
-                    leading: Icon(Icons.nature_people, color: Colors.deepOrangeAccent[400],),
-                    title: Text("Jobs"),
-                  ),
+//                  ListTile(
+////                    leading: ImageIcon(AssetImage("assets/culture.png")),
+//                    leading: Icon(Icons.nature_people, color: Colors.deepOrangeAccent[400],),
+//                    title: Text("Jobs"),
+//                  ),
+                SizedBox(height: MediaQuery.of(context).size.height/ 10,),
                   InkWell(
                     onTap: () {
                       Navigator.pop(context);
@@ -94,14 +96,29 @@ class myDrawer extends StatelessWidget {
 //                      leading: ImageIcon(AssetImage("assets/culture.png")),
 
                       leading: Icon(Icons.directions_walk, color: Colors.deepOrangeAccent[400],),
-                      title: Text("Past Governors"),
+                      title: Text("Past Governors", style: kDetailContent. copyWith(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),),
                     ),
                   ),
-                  ListTile(
-//                    leading: ImageIcon(AssetImage("assets/culture.png")),
-                    leading: Icon(Icons.person, color: Colors.deepOrangeAccent[400],),
-                    title: Text("People and culture"),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (coontext) => MyApp()));
+                    },
+                    child: ListTile(
+//                      leading: ImageIcon(AssetImage("assets/culture.png")),
+
+                      leading: Icon(Icons.directions_walk, color: Colors.deepOrangeAccent[400],),
+                      title: Text("Gallery", style: kDetailContent. copyWith(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),),
+                    ),
                   ),
+//                  ListTile(
+////                    leading: ImageIcon(AssetImage("assets/culture.png")),
+//                    leading: Icon(Icons.person, color: Colors.deepOrangeAccent[400],),
+//                    title: Text("People and culture"),
+//                  ),
                   InkWell(
                     onTap: () {
                       Navigator.pop(context);
@@ -113,7 +130,7 @@ class myDrawer extends StatelessWidget {
                     child: ListTile(
 //                    leading: ImageIcon(AssetImage("assets/culture.png")),
                       leading: Icon(Icons.person, color: Colors.deepOrangeAccent[400],),
-                      title: Text("Tourism"),
+                      title: Text("Tourism", style: kDetailContent. copyWith(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),),
                     ),
                   ),
                   InkWell(
@@ -126,15 +143,15 @@ class myDrawer extends StatelessWidget {
                     },
                     child: ListTile(
                       leading: ImageIcon(AssetImage("assets/culture.png"), color: Colors.deepOrangeAccent[400],),
-                      title: Text("Local Governments"),
+                      title: Text("Local Governments", style: kDetailContent. copyWith(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),),
                     ),
                   ),
-                  ListTile(
+//                  ListTile(
 //                    leading: ImageIcon(AssetImage("assets/culture.png")),
 
-                    leading: Icon(Icons.location_city, color: Colors.deepOrangeAccent[400],),
-                    title: Text("Traditional Rulers"),
-                  ),
+//                    leading: Icon(Icons.location_city, color: Colors.deepOrangeAccent[400],),
+//                    title: Text("Traditional Rulers"),
+//                  ),
                   const Expanded(child: SizedBox()),
                   const Divider(
                     height: 1.0,
@@ -143,10 +160,7 @@ class myDrawer extends StatelessWidget {
                   ListTile(
 //                        leading: Icon(Icons.exit_to_app),
                     title: Text("About",
-                        style: TextStyle(
-                            fontFamily: 'cantarell',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15)),
+                        style: kDetailContent. copyWith(fontWeight: FontWeight.bold, fontSize: 20)),
 //                        onTap: (){
 //                          Navigator.of(context).push(
 //                              new MaterialPageRoute(builder: (context) => About()));
@@ -155,10 +169,7 @@ class myDrawer extends StatelessWidget {
                   ListTile(
 //                        leading: Icon(Icons.exit_to_app),
                       title: Text("FeedBack",
-                          style: TextStyle(
-                              fontFamily: 'cantarell',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15)),
+                          style: kDetailContent. copyWith(fontWeight: FontWeight.bold, fontSize: 20)),
                       onTap: () {
 //                          Navigator.of(context).push(
 //                              new MaterialPageRoute(builder: (context) => Feedback_()));

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:newsapp/constants.dart';
 import 'package:newsapp/provider/user_provider.dart';
 import 'package:newsapp/views/popular_tab_view.dart';
@@ -10,13 +11,20 @@ import 'package:provider/provider.dart';
 
 import '../constants.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
+  @override
+  _HomeViewState createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<UserProvider>(context);
+    GlobalKey<ScaffoldState> _drawerkey = GlobalKey();
     return DefaultTabController(
       length: 3,
       child: Scaffold(
+        key: _drawerkey,
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(120.0),
           child: Column(
@@ -24,23 +32,31 @@ class HomeView extends StatelessWidget {
               ListTile(
                 contentPadding: EdgeInsets.zero,
                 leading: IconButton(
+                  onPressed: () {
+                  _drawerkey.currentState.openDrawer();
+                },
                   icon: Icon(
                     Icons.format_align_left,
                     color: Colors.deepOrangeAccent[400],
                   ),
-                  onPressed: () {
-                    Scaffold.of(context).openDrawer();
-                  },
+
                 ),
                 title: Text(
                   "",
                   textAlign: TextAlign.end,
                   style: kNonActiveTabStyle,
                 ),
-                subtitle: Text(
-                  "Ekiti News Hub",
-                  textAlign: TextAlign.end,
-                  style: kActiveTabStyle,
+                subtitle: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    Icon(LineAwesomeIcons.hubspot, color: Colors.deepOrangeAccent[400], size: 30,),
+                    Text(
+                      "Ekiti News Hub",
+                      textAlign: TextAlign.end,
+                      style: kActiveTabStyle,
+                    ),
+                  ],
                 ),
                 trailing: InkWell(
                   onTap: () {
@@ -92,3 +108,4 @@ class HomeView extends StatelessWidget {
     );
   }
 }
+

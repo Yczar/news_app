@@ -184,33 +184,23 @@ class PopularTabView extends StatelessWidget {
                                             MaterialPageRoute(
                                               builder: (context) =>
                                                   ReadNewsView(
-                                                title: snapshotss.data[index]
-                                                    ["title"],
-                                                imageurl: snapshots
-                                                    .data["profileimage"],
-                                                image: snapshotss.data[index]
-                                                    ["image"],
-                                                subtitle: snapshotss.data[index]
-                                                    ["subtitle"],
-                                                author: snapshotss.data[index]
-                                                    ["author"],
-                                                category: snapshotss.data[index]
-                                                    ["category"],
-                                                content: snapshotss.data[index]
-                                                    ["content"],
-                                                estimate: snapshotss.data[index]
-                                                    ["estimate"],
-                                                ownerid: snapshotss.data[index]
-                                                    ["ownerid"],
-                                                timestamp: snapshotss
-                                                    .data[index]["timestamp"],
-                                                favorite: snapshotss.data[index]
-                                                    ["favorite"],
-                                                userid: user.user.uid,
-                                                seen:
-                                                    "${snapshotss.data[index]["seen"].length}",
-                                                time:
-                                                    "${Jiffy(snapshotss.data[index]["timestamp"].toDate()).fromNow()}",
+                                                    title: snapshot.data[index]["title"],
+                                                    imageurl: snapshots.data["profileimage"],
+                                                    image: snapshot.data[index]["image"],
+                                                    subtitle: snapshot.data[index]["subtitle"],
+                                                    author: snapshot.data[index]["author"],
+                                                    category: snapshot.data[index]["category"],
+                                                    content: snapshot.data[index]["content"],
+                                                    estimate: snapshot.data[index]["estimate"],
+                                                    ownerid: snapshot.data[index]["ownerid"],
+                                                    timestamp: snapshot.data[index]["timestamp"],
+                                                    favorite: snapshot.data[index]["favorite"],
+                                                    userid: user.user.uid,
+                                                    seen:
+                                                    "${snapshot.data[index]["seen"].length}",
+                                                    time:
+                                                    "${Jiffy(snapshot.data[index]["timestamp"].toDate()).fromNow()}",
+                                                    postid: snapshot.data[index]["postid"],
                                               ),
                                             ),
                                           );

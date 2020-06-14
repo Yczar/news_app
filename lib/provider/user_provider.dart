@@ -53,8 +53,13 @@ class UserProvider with ChangeNotifier{
           'email':email,
           "fullname" : fullname,
           "password" : password,
+          "Occupation" : "Tap to Edit",
+          "LGA" : "Tap to Edit",
+          "Location" : "Loading",
           'uid':_user.uid,
           "profileimage" : "https://firebasestorage.googleapis.com/v0/b/news-app-ae0cd.appspot.com/o/placeholder.jpg?alt=media&token=8252afad-2d6c-4b07-ab4d-455d5de93539",
+        }).catchError((onError){
+          Fluttertoast.showToast(msg: "${onError}");
         });
       });
       return true;
